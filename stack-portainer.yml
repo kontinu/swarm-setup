@@ -28,7 +28,7 @@ services:
       - proxy
       - portainer
     volumes:
-      - web:/data
+      #- web:/data
   agent:
     <<: *default-opts
     image: portainer/agent
@@ -47,8 +47,8 @@ networks:
   portainer: {}
 
 
-volumes:
-  web:
-    driver: rexray/dobs
-    driver_opts:
-      size: 1
+# volumes:
+#   web:
+#     driver: rexray/dobs
+#     driver_opts:
+#       size: 1

@@ -21,7 +21,7 @@ services:
     networks:
       - proxy
     volumes:
-      - acme:/etc/traefik/acme
+      #- acme:/etc/traefik/acme
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "80:80"
@@ -57,11 +57,11 @@ services:
         # sample users/password test/test and test2/test2
         traefik.http.middlewares.auth.basicauth.users: test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/,test2:$$apr1$$d9hr9HBB$$4HxwgUir3HP4EsggP/QNo0
 
-volumes:
-  acme:
-    driver: rexray/dobs
-    driver_opts:
-      size: 1
+# volumes:
+#   acme:
+#     driver: rexray/dobs
+#     driver_opts:
+#       size: 1
 
 networks:
   proxy:
