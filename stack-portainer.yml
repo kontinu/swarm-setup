@@ -27,8 +27,8 @@ services:
     networks:
       - proxy
       - portainer
-    volumes:
-      #- web:/data
+    # volumes:
+    #   #- web:/data
   agent:
     <<: *default-opts
     image: portainer/agent
