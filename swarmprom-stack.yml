@@ -14,19 +14,19 @@ networks:
   proxy:
     external: true
 
-volumes:
-    prometheus:
-      driver: rexray/dobs
-      driver_opts:
-        size: 10
-    grafana:
-      driver: rexray/dobs
-      driver_opts:
-        size: 1
-    alertmanager:
-      driver: rexray/dobs
-      driver_opts:
-        size: 1
+# volumes:
+#     prometheus:
+#       driver: rexray/dobs
+#       driver_opts:
+#         size: 10
+#     grafana:
+#       driver: rexray/dobs
+#       driver_opts:
+#         size: 1
+#     alertmanager:
+#       driver: rexray/dobs
+#       driver_opts:
+#         size: 1
 
 configs:
   dockerd_config:
