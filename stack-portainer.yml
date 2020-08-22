@@ -20,7 +20,7 @@ services:
         # constraints: [node.role == manager]
         # place on managers when not using agent, place on workers if using agent
       labels:
-        traefik.http.routers.portainer.rule: Host(`portainer.dogvs.cat`)
+        traefik.http.routers.portainer.rule: Host(`portainer.${MYDOMAIN:-example.local}`)
         traefik.http.routers.dogvs.entryPoints: websecure
         traefik.http.routers.portainer.service: portainer
         traefik.http.services.portainer.loadbalancer.server.port: 9000

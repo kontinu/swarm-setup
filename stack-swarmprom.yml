@@ -100,7 +100,7 @@ services:
       mode: replicated
       replicas: 1
       labels:
-        traefik.http.routers.grafana.rule: Host(`grafana.dogvs.cat`)
+        traefik.http.routers.grafana.rule: Host(`grafana.${MY_DOMAIN:-kontinu.local}`)
         traefik.http.routers.grafana.entryPoints: websecure
         traefik.http.routers.grafana.service: grafana
         traefik.http.services.grafana.loadbalancer.server.port: 3000
@@ -133,7 +133,7 @@ services:
       mode: replicated
       replicas: 1
       labels:
-        traefik.http.routers.alertmanager.rule: Host(`alertmanager.dogvs.cat`)
+        traefik.http.routers.alertmanager.rule: Host(`alertmanager.${MY_DOMAIN:-kontinu.local}`)
         traefik.http.routers.alertmanager.entryPoints: websecure
         traefik.http.routers.alertmanager.service: alertmanager
         traefik.http.routers.alertmanager.middlewares: alertmanager-auth
@@ -161,7 +161,7 @@ services:
       mode: replicated
       replicas: 1
       labels:
-        traefik.http.routers.unsee.rule: Host(`unsee.dogvs.cat`)
+        traefik.http.routers.unsee.rule: Host(`unsee.${MY_DOMAIN:-kontinu.local}`)
         traefik.http.routers.unsee.entryPoints: websecure
         traefik.http.routers.unsee.service: unsee
         traefik.http.routers.unsee.middlewares: unsee-auth
@@ -221,7 +221,7 @@ services:
       mode: replicated
       replicas: 1
       labels:
-        traefik.http.routers.prom.rule: Host(`prom.dogvs.cat`)
+        traefik.http.routers.prom.rule: Host(`prom.${MY_DOMAIN:-kontinu.local}`)
         traefik.http.routers.prom.entryPoints: websecure
         traefik.http.routers.prom.service: prom
         traefik.http.routers.prom.middlewares: prom-auth
